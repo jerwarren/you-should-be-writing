@@ -1,0 +1,26 @@
+{
+  "name": "You Should be Writing",
+  "description": "notify on 10 minutes of docs inactivity",
+  "version": "2.0",
+  "permissions": [
+    "*://docs.google.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://docs.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_action": {
+    "default_title": "Notify"
+  },
+  "web_accessible_resources": [
+      "school-bell.mp3"
+  ],
+  "manifest_version": 2
+}
