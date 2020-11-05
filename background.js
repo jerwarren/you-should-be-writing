@@ -6,7 +6,7 @@
 var idle;
 function action(){
   chrome.tabs.executeScript({
-    code: 'alert("test2");var x=0;var myAudio = new Audio(chrome.runtime.getURL("school-bell.mp3"));function loop(){idle = document.querySelector(".docs-title-save-label-text").innerText;console.log(idle);if (idle == "Last edit was 10 minutes ago"){myAudio.play();console.log("test");}setTimeout(loop, 30000);}loop();'
+    code: 'var x=0;var myAudio = new Audio(chrome.runtime.getURL("school-bell.mp3"));function loop(){idle = document.querySelector(".docs-title-save-label-text").innerText;console.log(idle);if (idle == "Last edit was 10 minutes ago"){myAudio.play();console.log("test");}setTimeout(loop, 30000);}loop();'
   });
 }
 chrome.browserAction.onClicked.addListener(function(tab) {
